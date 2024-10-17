@@ -8,7 +8,7 @@ function NavScrollExample() {
     <Navv />
     <br />
     <Layout />
-
+   
     
     </>
   );

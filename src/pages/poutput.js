@@ -1,48 +1,51 @@
-import React, { useEffect, useState } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import { firestore } from '../firebase_config/firebase'; // Assuming you've imported Firebase configuration
-// import React, { useState, useEffect } from 'react';
+// import React, { useEffect, useState } from 'react';
 // import { collection, getDocs } from 'firebase/firestore';
-// import { firestore } from './firebase'; // Assuming you've imported Firebase configuration
+// import { firestore } from '../firebase_config/firebase'; // Assuming you've imported Firebase configuration
+// // import React, { useState, useEffect } from 'react';
+// // import { collection, getDocs } from 'firebase/firestore';
+// // import { firestore } from './firebase'; // Assuming you've imported Firebase configuration
 
-const ProductList = () => {
-  const [products, setProducts] = useState([]);
+// import React, { useEffect, useState } from 'react';
+// import firebase from 'firebase/app';
+// import 'firebase/database';
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(firestore, 'products'));
-        const productsData = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
-        setProducts(productsData);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
-    };
+// function ProductList() {
+//   const [products, setProducts] = useState([]);
 
-    fetchProducts();
-  }, []);
+//   useEffect(() => {
+//     const databaseRef = firebase.database().ref('products');
+//     databaseRef.on('value', (snapshot) => {
+//       const productsData = snapshot.val();
+//       const productsArray = Object.keys(productsData).map((key) => ({
+//         ...productsData[key],
+//         id: key,
+//       }));
+//       setProducts(productsArray);
+//     });
+//   }, []);
 
-  return (
-    <div>
-      {products.map(product => (
-        <div key={product.id}> {/* Use product.id as key */}
-          <h2>{product.name}</h2>
-          <p>{product.description}</p>
-          <p>Price: ${product.price}</p>
-          {product.images && product.images.length > 0 && ( // Check if images exist
-            <div>
-              {product.images.map(imageUrl => (
-                <img src={'imageUrl'}  alt={product.name} key={imageUrl} />
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <h2>Product List</h2>
+//       <ul>
+//         {products.map((product) => (
+//           <li key={product.id}>
+//             <h3>{product.name}</h3>
+//             <p>{product.description}</p>
+//             <p>Category: {product.category}</p>
+//             <p>Images:</p>
+//             <ul>
+//               {product.images.map((image) => (
+//                 <li key={image}>
+//                   <img src={image} alt={product.name} width="200" height="200" />
+//                 </li>
+//               ))}
+//             </ul>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
 
-export default ProductList;
+// export default ProductList;

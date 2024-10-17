@@ -9,7 +9,7 @@ import Dashbaord from '../pages/dashboard';
 
 
 
-function Layout (){
+export default function Layout (){
     return (
         <Container>
     <Tab.Container id="left-tabs-example " defaultActiveKey="first">
@@ -47,6 +47,7 @@ function Layout (){
       </Row>
     </Tab.Container>
     </Container>
-    )
+    );
 }
-export default Layout;
+
+

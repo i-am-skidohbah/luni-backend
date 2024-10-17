@@ -18,6 +18,51 @@ function DbCustomers(){
                         </div>
                         <hr className=""/>
 
+                        <div>
+                            <table className="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Telephone</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>John Doe</td>
+                                        <td>+14 clark quarters workslayout </td>
+                                        <td> +234 8113148117</td>
+                                        <td>
+                                            <button className="btn btn-sm btn-outline-primary">Edit</button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>John Doe</td>
+                                        <td>+14 clark quarters workslayout </td>
+                                        <td> +234 8113148117</td>
+                                        <td>
+                                            <button className="btn btn-sm btn-outline-primary">Edit</button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>John Doe</td>
+                                        <td>+14 clark quarters workslayout </td>
+                                        <td> +234 8113148117</td>
+                                        <td>
+                                            <button className="btn btn-sm btn-outline-primary">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                         
 
                     </div>

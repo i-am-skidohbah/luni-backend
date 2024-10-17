@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Card } from "react-bootstrap";
+// import { Icon } from 'react-bootstrap';
 
 
 function DbDisplay(){
@@ -11,7 +12,7 @@ function DbDisplay(){
         width: '70px',
         height:'70px',
         margin: '6px',
-        backgroundColor: '#555'
+        // backgroundColor: '#555'
     }
 
     return (
@@ -22,17 +23,15 @@ function DbDisplay(){
                         <Col>
                             <div className="d-flex justify-content-center">
                                 <div className="p-3">
-                                    <span className="rounded-circle" style={span}>
-
+                                    <span className="rounded-circle border border-success" style={span}>
+                                    <i className="bi bi-heart-fill"></i>
                                     </span>
                                 </div>
                                 <div>
                                     <div className="d-flex flex-column">
+                                        
                                         <div>
-                                            <p>hello</p>
-                                        </div>
-                                        <div>
-                                            <p>hello</p>
+                                            <p>Products</p>
                                         </div>
                                         <div>
                                             <p>hello</p>
