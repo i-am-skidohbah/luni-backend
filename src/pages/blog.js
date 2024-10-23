@@ -1,13 +1,14 @@
 import React from "react";
 import  Tab  from 'react-bootstrap/Tab';
 import { Tabs } from "react-bootstrap";
-import AddCustomer from "../components/addCustomers";
-import CustomerList from "../components/viewCustomers";
+import AddBlogPost from "../components/addPost";
+import BlogSummaries from "../components/viewPost";
 
 
-function Customers(){
+
+function Blog(){
     return (
-        <>
+        <div>
         <Tabs
       defaultActiveKey="profile"
       id="justify-tab-example"
@@ -15,15 +16,15 @@ function Customers(){
       justify
     >
       <Tab eventKey="home" title="Products">
-      <CustomerList />
+      <AddBlogPost />
       </Tab>
       <Tab eventKey="profile" title="Add Product">
-      <AddCustomer />
+      <BlogSummaries />
       </Tab>
       
     </Tabs>
-        </>
-    )
+        </div>
+    );
 }
 
-export default Customers;
+export default Blog;

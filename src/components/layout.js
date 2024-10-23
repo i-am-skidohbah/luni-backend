@@ -9,6 +9,8 @@ import ProductList from '../pages/customers';
 import Dashbaord from '../pages/dashboard';
 import DbDisplay from './dashboard_display';
 import ShowProduct from '../pages/customers';
+import Customers from '../pages/customers';
+import Blog from '../pages/blog';
 
 
 
@@ -38,9 +40,11 @@ import ShowProduct from '../pages/customers';
             <Tab.Pane eventKey="first"><Dashbaord /></Tab.Pane>
             <Tab.Pane eventKey="second"><Product /></Tab.Pane>
             <Tab.Pane eventKey="third">
-              customers 
+              <Customers /> 
             </Tab.Pane>
-            <Tab.Pane eventKey="forth"></Tab.Pane>
+            <Tab.Pane eventKey="forth">
+              <Blog />
+              </Tab.Pane>
           </Tab.Content>
         </Col>
       </Row>
