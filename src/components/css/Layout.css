@@ -1,0 +1,13 @@
+.nav-link {
+    color: #000;
+  }
+  
+  .nav-link.active {
+    background-color: #28a745 !important; /* Green active indicator */
+    color: #fff !important;
+  }  
+
+  .content-column {
+    height: 100vh;
+    overflow-y: auto;
+  }  

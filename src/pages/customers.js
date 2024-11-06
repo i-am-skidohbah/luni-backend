@@ -1,6 +1,5 @@
 import React from "react";
-import  Tab  from 'react-bootstrap/Tab';
-import { Tabs } from "react-bootstrap";
+
 import AddCustomer from "../components/addCustomers";
 import CustomerList from "../components/viewCustomers";
 
@@ -8,20 +7,28 @@ import CustomerList from "../components/viewCustomers";
 function Customers(){
     return (
         <>
-        <Tabs
-      defaultActiveKey="profile"
-      id="justify-tab-example"
-      className="mb-3"
-      justify
-    >
-      <Tab eventKey="home" title="Products">
-      <CustomerList />
-      </Tab>
-      <Tab eventKey="profile" title="Add Product">
-      <AddCustomer />
-      </Tab>
+        <div class="container mt-3">
+        <h2>Toggleable Tabs</h2>
+       
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#home">Customers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu1">Add Products</a>
+          </li>
+          
+        </ul>
       
-    </Tabs>
+        <div class="tab-content">
+          <div id="home" class="container tab-pane active "> <br />
+            <CustomerList />
+          </div>
+          <div id="menu1" class="container tab-pane fade"> <br />
+            <AddCustomer />
+          </div>
+        </div>
+      </div>
         </>
     )
 }

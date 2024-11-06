@@ -7,20 +7,29 @@ import ShowProduct from "../components/viewProducts";
 function Product(){
     return (
         <>
-        <Tabs
-      defaultActiveKey="profile"
-      id="justify-tab-example"
-      className="mb-3"
-      justify
-    >
-      <Tab eventKey="home" title="Products">
-      <ShowProduct />
-      </Tab>
-      <Tab eventKey="profile" title="Add Product">
-        <AddProduct />
-      </Tab>
+        <div class="container mt-3">
+        <h2>Toggleable Tabs</h2>
+       
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#home">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu1">Add Products</a>
+          </li>
+          
+        </ul>
       
-    </Tabs>
+        <div class="tab-content">
+          <div id="home" class="container tab-pane active "> <br />
+            <ShowProduct />
+          </div>
+          <div id="menu1" class="container tab-pane fade"> <br />
+            <AddProduct />
+          </div>
+        </div>
+      </div>
+
         </>
     )
 }

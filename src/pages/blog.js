@@ -1,29 +1,36 @@
 import React from "react";
-import  Tab  from 'react-bootstrap/Tab';
-import { Tabs } from "react-bootstrap";
 import AddBlogPost from "../components/addPost";
 import BlogSummaries from "../components/viewPost";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-function Blog(){
+function Blog() {
     return (
-        <div>
-        <Tabs
-      defaultActiveKey="profile"
-      id="justify-tab-example"
-      className="mb-3"
-      justify
-    >
-      <Tab eventKey="home" title="Products">
-      <AddBlogPost />
-      </Tab>
-      <Tab eventKey="profile" title="Add Product">
-      <BlogSummaries />
-      </Tab>
+        
+        <div class="container mt-3">
+        <h2>Toggleable Tabs</h2>
+       
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#home">Blog Post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu1">Add Post</a>
+          </li>
+          
+        </ul>
       
-    </Tabs>
+        <div class="tab-content">
+          <div id="home" class="container tab-pane active "> <br />
+            <BlogSummaries />
+          </div>
+          <div id="menu1" class="container tab-pane fade"> <br />
+            <AddBlogPost />
+          </div>
         </div>
+      </div>
+        
     );
 }
 
