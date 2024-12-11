@@ -1,0 +1,10 @@
+.scrollable-container {
+    height: 80vh; /* Adjust this value to fit your design */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  body {
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-style: normal;
+  }

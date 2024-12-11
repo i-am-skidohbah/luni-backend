@@ -4,7 +4,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Pagination from 'react-bootstrap/Pagination';
 
-const CustomerList = () => {
+function CustomerList () {
     const [customers, setCustomers] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [customersPerPage] = useState(2);

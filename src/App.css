@@ -13,6 +13,12 @@
   }
 }
 
+/* body {
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  font-style: normal;
+} */
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

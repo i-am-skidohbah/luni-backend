@@ -1,37 +1,34 @@
-import React from "react";
-import AddBlogPost from "../components/addPost";
-import BlogSummaries from "../components/viewPost";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
+import { Tab, Nav } from 'react-bootstrap';
+import BlogSummaries from '../components/viewPost';  // Replace with your actual import
+import AddBlogPost from '../components/addPost';      // Replace with your actual import
 
+function Blog () {
+  const [key, setKey] = useState('home');
 
-
-function Blog() {
-    return (
-        
-        <div class="container mt-3">
-        <h2>Toggleable Tabs</h2>
-       
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" data-bs-toggle="tab" href="#home">Blog Post</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" href="#menu1">Add Post</a>
-          </li>
-          
-        </ul>
-      
-        <div class="tab-content">
-          <div id="home" class="container tab-pane active "> <br />
+  return (
+    <div className="container mt-3">
+      <h2>Toggleable Tabs</h2>
+      <Tab.Container activeKey={key} onSelect={(k) => setKey(k)}>
+        <Nav variant="tabs">
+          <Nav.Item>
+            <Nav.Link eventKey="home">Blog Post</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="menu1">Add Post</Nav.Link>
+          </Nav.Item>
+        </Nav>
+        <Tab.Content>
+          <Tab.Pane eventKey="home">
             <BlogSummaries />
-          </div>
-          <div id="menu1" class="container tab-pane fade"> <br />
+          </Tab.Pane>
+          <Tab.Pane eventKey="menu1">
             <AddBlogPost />
-          </div>
-        </div>
-      </div>
-        
-    );
-}
+          </Tab.Pane>
+        </Tab.Content>
+      </Tab.Container>
+    </div>
+  );
+};
 
 export default Blog;
