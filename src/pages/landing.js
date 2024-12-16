@@ -1,27 +1,56 @@
-import React from 'react';
-import Layout from '../components/layout';
-import Navv from '../components/nav'
-import './css/Landing.css'
+import { Table, Typography, Space } from "antd";
+import React from "react";
+import { useState, useEffect } from "react";
+import { Products } from "../components/API";
 
-function Landing() {
-  const style = {
-    backgroundColor: 'green'
-  }
+const Order = () => {
+  const [dataSource, setDataSource] = useState();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    Products().then((data) => {
+      setDataSource(data.products);
+      setLoading(false);
+    });
+  }, []);
+
   return (
-    <>
-      {/* <div className='container mt-5 border rounded '
-       style={{ height: '800px', overflow: 'auto' }} >
-       
-      </div> */}
-       <div className='container-fluid '>
-       <Layout />
-       </div>
-    </>
+    <Space size={40} direction="vertical">
+      <Typography.Text level={4}>Orders </Typography.Text>
+      <Table
+        columns={[
+          {
+            title: "Title",
+            dataIndex: "title",
+          },
+          {
+            title: "Price",
+            dataIndex: "price",
+            render: (value) => <span>${value}</span>,
+          },
 
+          {
+            title: "Quantity",
+            dataIndex: "totalQuantity",
+          },
 
+          {
+            title: "Brand",
+            dataIndex: "brand",
+          },
+
+          {
+            title: "Total",
+            dataIndex: "total",
+          },
+        ]}
+        loading={loading}
+        dataSource={dataSource}
+        pagination={{ pageSize: 5 }}
+      ></Table>
+    </Space>
   );
-}
+};
 
-export default Landing;
-
-
+export default Order;

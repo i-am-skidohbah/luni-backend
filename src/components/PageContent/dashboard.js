@@ -1,21 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Stack from "react-bootstrap/Stack";
-import {
-  Carousel,
-  Container,
-  Row,
-  Col,
-  Button,
-  ListGroup,
-  Badge,
-} from "react-bootstrap";
-import Card from "react-bootstrap/Card";
-import "bootstrap/dist/css/bootstrap.min.css";
-import DbProduct from "../components/dashboard_product";
-import DbCustomers from "../components/dashboard_customers";
-import DbDisplay from "../components/dashboard_display";
-import "./css/Dashboard.css";
-import Img1 from "../assets/sl1.jpg";
+import AppRoutes from "../AppRoutes";
 
 function Dashbaord() {
   const [time, setTime] = useState(new Date());
@@ -38,15 +22,14 @@ function Dashbaord() {
       return "Evening";
     }
   };
-
   const alertClicked = () => {
     alert("You clicked the third ListGroupItem");
   };
-
+  // console.log(time.getUTCSeconds());
   return (
-    <>
-      <div></div>
-    </>
+    <div className="pl-6 pt-10">
+      <AppRoutes />
+    </div>
   );
 }
 
