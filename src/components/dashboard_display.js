@@ -12,7 +12,7 @@ import {
 } from "chart.js";
 
 import { useState, useEffect } from "react";
-import { Card, Divider, Space, Statistic, Table, Typography } from "antd";
+import { Card, Space, Statistic, Table, Typography } from "antd";
 import {
   DollarCircleOutlined,
   ShopOutlined,
@@ -20,6 +20,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { ChartData, Order } from "../components/API";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -64,7 +65,7 @@ const DbDisplay = () => {
         >{`${getTimeOfDay()} Admin`}</Typography.Text>
         <Typography.Title level={4}>welcome back</Typography.Title>
       </Space>
-      <Space direction="horizontal">
+      <Space direction="horizontal" className="w-full">
         <DashboardCard
           icon={
             <ShoppingCartOutlined
@@ -126,7 +127,7 @@ const DbDisplay = () => {
           value={23323}
         />
       </Space>
-      <Space direction="horizontal">
+      <Space direction="horizontal" className=" w-full py-5">
         <GetOrders />
         <LineGraph />
       </Space>
@@ -159,7 +160,7 @@ export const GetOrders = () => {
   }, []);
 
   return (
-    <>
+    <div className="w2/4">
       <Typography.Text>Recents Orders</Typography.Text>
       <Table
         columns={[
@@ -171,15 +172,17 @@ export const GetOrders = () => {
         dataSource={dataSource}
         pagination={false}
       ></Table>
-    </>
+    </div>
   );
 };
 
 const LineGraph = () => {
-  const options = {};
+  const options = {
+    maintainAspectRatio: false,
+  };
   return (
-    <Card style={{ width: 400, height: 200 }}>
-      <Line options={options} data={ChartData} />;
-    </Card>
+    <div className=" border w-[800px] h-[400px]">
+      <Line options={options} data={ChartData} />
+    </div>
   );
 };

@@ -32,7 +32,7 @@ const Login = () => {
       // Check if the user is an admin
       const userDoc = await getDoc(doc(db, "users", user.uid));
       if (userDoc.exists() && userDoc.data().role === "admin") {
-        navigate("/admin");
+        navigate("/dashboard/*");
       } else {
         setError("You are not authorized to access this page");
       }

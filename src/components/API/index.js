@@ -44,18 +44,16 @@ export const ChartData = {
   ],
   datasets: [
     {
-      label: "My First Dataset",
+      label: "Revenue",
       data: [65, 59, 80, 81, 56, 55, 40],
-      fill: false,
+
       borderColor: "rgb(75, 192, 192)",
-      tension: 0.1,
     },
     {
-      label: "My First Dataset",
+      label: "Sales",
       data: [80, 50, 80, 81, 76, 77, 40],
 
       borderColor: "red",
-      tension: 0.1,
     },
   ],
 };

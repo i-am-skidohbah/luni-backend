@@ -4,7 +4,7 @@ import DbDisplay from "../dashboard_display";
 import DbProduct from "../dashboard_product";
 import DbCustomers from "../dashboard_customers";
 
-import Order from "../../pages/landing";
+import Order from "../../pages/Order";
 import Blog from "../../pages/blog";
 
 const AppRoutes = () => {

@@ -19,7 +19,7 @@ const SideBar = () => {
   };
   const navigate = useNavigate();
   return (
-    <div className="relative ">
+    <div className="relative w-full h-full bg-red-500">
       <div className="absolute top-0 -left-4 px-4 w-32 h-24 md:hidden block">
         <img
           src={humburger}
@@ -35,7 +35,7 @@ const SideBar = () => {
           className="absolute md:hidden block top-0 right-1 w-12 h-12"
         />
         <Menu
-          className="text-2xl h-screen w-full  md:w-[400px] py-5 md:py-0 flex items-center flex-col gap-3"
+          className="text-2xl h-screen w-full bg-green-400 md:w-[400px] py-5 md:py-0 flex items-center flex-col gap-3"
           onClick={(items) => {
             //   items.key
             navigate(items.key);
